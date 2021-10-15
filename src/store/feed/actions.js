@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-
-const API_URL = `https://codaisseur-coders-network.herokuapp.com/posts`;
+import { API_URL } from "../../config";
+// const API_URL = `https://codaisseur-coders-network.herokuapp.com/posts`;
 
 export function startLoading() {
   return {
