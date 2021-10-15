@@ -2,7 +2,7 @@ export function selectPostAndComments(reduxState) {
   return reduxState.postPage.loading
     ? null
     : {
-        post: reduxState.postPage.post,
+        post: reduxState.postPage.posts,
         comments: reduxState.postPage.comments,
       };
 }

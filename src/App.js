@@ -8,8 +8,8 @@ export default function App() {
   return (
     <div>
       <Switch>
-        <Route path={"/post/:id"} component={PostPage} />
-        <Route path={"/"} component={HomePage} />
+        <Route path="/post/:id" component={PostPage} />
+        <Route component={HomePage} />
       </Switch>
     </div>
   );

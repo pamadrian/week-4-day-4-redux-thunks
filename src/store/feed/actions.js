@@ -21,9 +21,9 @@ export async function fetchNext5Posts(dispatch, getState) {
   dispatch(startLoading());
 
   const offset = getState().feed.posts.length;
-  const response = await axios.get(`${API_URL}?offset=${offset}&limit=5`);
+  const response = await axios.get(`${API_URL}/posts?offset=${offset}&limit=5`);
   const morePosts = response.data.rows;
-  console.log(response.data);
+  console.log("response?", response);
 
   // TODO
   // fetch next set of posts (use offset+limit),
