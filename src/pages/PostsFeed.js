@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { postFetched, startLoading } from "../store/feed/actions";
 import { selectFeedLoading, selectFeedPosts } from "../store/feed/selectors";
 import { fetchNext5Posts } from "../store/feed/actions";
+import { Link } from "react-router-dom";
 
 // const API_URL = `https://codaisseur-coders-network.herokuapp.com/posts`;
 
@@ -29,6 +30,10 @@ export default function PostsFeed() {
               <div key={post.id}>
                 {" "}
                 <h3>{post.title}</h3>
+                <h3>
+                  {" "}
+                  <Link to={`/post/${post.id}`}>{post.title}</Link>
+                </h3>
                 <p> {post.content} </p>
                 <p className="meta">
                   {" "}
