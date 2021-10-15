@@ -29,7 +29,6 @@ export default function PostsFeed() {
             <div class="card">
               <div key={post.id}>
                 {" "}
-                <h3>{post.title}</h3>
                 <h3>
                   {" "}
                   <Link to={`/post/${post.id}`}>{post.title}</Link>
