@@ -5,11 +5,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPost } from "../store/postPage/actions";
 import { selectPostAndComments } from "../store/postPage/selectors";
+import ReactMarkdown from "react-markdown";
 
 export default function PostPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const loading = useSelector(selectPostAndComments);
+  const postData = useSelector(selectPostAndComments);
   console.log(id);
 
   useEffect(() => {
@@ -21,7 +22,18 @@ export default function PostPage() {
       {" "}
       <h1 align="center">Hello this is the postpage!</h1>
       <div>
-        <p>{loading ? <em>Loading...</em> : <p> Done! </p>}</p>
+        {postData ? (
+          <em>Loading...</em>
+        ) : (
+          <>
+            <h1> {postData.post.title} </h1>
+            <p className="meta"> TODO </p>
+            <ReactMarkdown children={postData.post.content} />
+
+            <h2>Comments</h2>
+            <p>TODO</p>
+          </>
+        )}
       </div>
     </div>
   );
