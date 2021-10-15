@@ -10,11 +10,14 @@ import feedSliceReducer from "./feed/reducer";
 
 import postPageSliceReducer from "./postPage/reducer";
 
+import authSliceReducer from "./auth/reducer";
+
 const RootReducer = combineReducers({
   // someFeature: someFeatureReducer,
   // etc...
   feed: feedSliceReducer,
   postPage: postPageSliceReducer,
+  user: authSliceReducer,
 });
 
 export default RootReducer;

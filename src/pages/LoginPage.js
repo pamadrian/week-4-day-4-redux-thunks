@@ -8,14 +8,14 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+
   function handleSubmit(event) {
     event.preventDefault();
 
+    dispatch(login(email, password));
     // TODO
     console.log("TODO login with:", email, password);
   }
-
-  dispatch(login(email, password));
 
   return (
     <div>
